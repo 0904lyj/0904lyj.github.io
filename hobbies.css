@@ -1,0 +1,74 @@
+.hobbies-section { margin-bottom: 60px; }
+
+.hobby-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.hobby-card {
+    background-color: #FFF9FA; border-radius: 16px; padding: 20px;
+    text-align: center; border: 1px solid #FFEBEF;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer; /* 鼠标变小手 */
+}
+
+.hobby-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(255, 138, 155, 0.15);
+}
+
+.hobby-icon { font-size: 28px; margin-bottom: 10px; display: block; }
+.hobby-card h3 { font-size: 16px; font-weight: 600; margin-bottom: 5px; color: var(--text-main); }
+.hobby-card p { font-size: 13px; color: var(--text-light); }
+
+/* 半透明黑底遮罩层 */
+.modal-overlay {
+    display: none; 
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.85); /* 背景改暗一点，更像看图软件 */
+    backdrop-filter: blur(5px); 
+    z-index: 9999; 
+    
+    display: none; /* 保持默认隐藏，JS控制显示为flex */
+    justify-content: center;
+    align-items: flex-start; /* 顶部对齐，防止大图被截断头部 */
+    overflow-y: auto; /* 允许垂直滚动 */
+    padding: 40px 0; /* 上下留出一点空隙 */
+}
+
+/* 2. 修改白色外框：去掉高度限制 */
+.modal-content {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    border-radius: 20px;
+    text-align: center;
+    width: 85%; /* 让白框占据屏幕宽度的 85% */
+    max-width: 1200px; /* 最大宽度放得非常宽 */
+    margin: auto; /* 保证如果内容不够高时，依然居中 */
+    box-shadow: 0 20px 50px rgba(255, 138, 155, 0.4);
+}
+
+.modal-content img {
+    width: 100%; /* 填满白框宽度 */
+    height: auto; /* 高度根据宽度自动等比缩放，不再限制高度 */
+    border-radius: 12px;
+    display: block;
+    margin: 0 auto;
+}
+
+/* 4. 视频保持不变 */
+.modal-content video {
+    max-width: 100%;
+    max-height: 80vh;
+    border-radius: 12px;
+    outline: none;
+}
+
+.modal-content p {
+    margin-top: 15px;
+    color: var(--primary-pink);
+    font-size: 16px;
+    font-weight: bold;
+}

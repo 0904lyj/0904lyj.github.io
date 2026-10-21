@@ -1,0 +1,38 @@
+/* 联系方式板块外间距 */
+.contact-section { 
+    margin-bottom: 20px; 
+}
+
+/* 联系方式盒子 */
+.contact-box {
+    background-color: #FFF9FA;
+    border-radius: 16px;
+    padding: 30px;
+    text-align: center;
+    border: 1px solid #FFEBEF;
+}
+
+/* 每一行文字 */
+.contact-box p { 
+    margin-bottom: 12px; 
+    font-size: 15px; 
+    color: var(--text-light); 
+}
+
+/* 最后一行去掉底部边距 */
+.contact-box p:last-child { 
+    margin-bottom: 0; 
+}
+
+/* 链接样式（粉色，悬停有下划线） */
+.contact-link {
+    color: var(--primary-pink);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.contact-link:hover { 
+    color: #E55B6D; 
+    text-decoration: underline; 
+}
